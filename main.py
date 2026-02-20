@@ -64,5 +64,6 @@ def check_status(job_id: str):
 # This is critical for Railway
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 8000))  # <- Railway will set PORT
+    import os
+    port = int(os.environ.get("PORT", 8000))  # <- Railway will provide PORT
     uvicorn.run("main:app", host="0.0.0.0", port=port)
